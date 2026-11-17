@@ -1,0 +1,9 @@
+{
+  "Name": "Coop Time Ledger",
+  "Author": "bbzy",
+  "Version": "0.1.3",
+  "Description": "Repays single-player pause time in multiplayer through a precise shared ledger.",
+  "UniqueID": "bbzy.CoopTimeLedger",
+  "EntryDll": "CoopTime.dll",
+  "MinimumApiVersion": "4.0.0"
+}

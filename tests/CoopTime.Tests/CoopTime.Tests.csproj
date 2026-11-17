@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <IsTestProject>true</IsTestProject>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+    <PackageReference Include="xunit" Version="2.9.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.0.2" PrivateAssets="all" />
+    <PackageReference Include="Mono.Cecil" Version="0.11.6" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="coverlet.collector" Version="6.0.4" PrivateAssets="all" />
+    <ProjectReference Include="../../src/CoopTime.Core/CoopTime.Core.csproj" />
+    <ProjectReference Include="../../src/CoopTime.Mod/CoopTime.Mod.csproj" />
+    <Reference Include="0Harmony" HintPath="$(STARDEW_GAME_PATH)/smapi-internal/0Harmony.dll" />
+  </ItemGroup>
+</Project>

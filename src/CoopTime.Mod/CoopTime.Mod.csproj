@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>CoopTime</AssemblyName>
+    <GamePath Condition="'$(GamePath)' == ''">$(STARDEW_GAME_PATH)</GamePath>
+  </PropertyGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="CoopTime.Tests" />
+    <ProjectReference Include="../CoopTime.Core/CoopTime.Core.csproj" />
+    <Reference Include="Stardew Valley" HintPath="$(GamePath)/Stardew Valley.dll" Private="false" />
+    <Reference Include="StardewModdingAPI" HintPath="$(GamePath)/StardewModdingAPI.dll" Private="false" />
+    <Reference Include="MonoGame.Framework" HintPath="$(GamePath)/MonoGame.Framework.dll" Private="false" />
+    <Reference Include="xTile" HintPath="$(GamePath)/xTile.dll" Private="false" />
+    <Reference Include="SMAPI.Toolkit.CoreInterfaces" HintPath="$(GamePath)/smapi-internal/SMAPI.Toolkit.CoreInterfaces.dll" Private="false" />
+    <Reference Include="0Harmony" HintPath="$(GamePath)/smapi-internal/0Harmony.dll" Private="false" />
+    <None Include="manifest.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+  <Target Name="CheckGamePath" BeforeTargets="ResolveReferences">
+    <Error Condition="!Exists('$(GamePath)/Stardew Valley.dll')" Text="Set STARDEW_GAME_PATH or GamePath to the game assembly directory. Building never launches or installs the game." />
+  </Target>
+</Project>

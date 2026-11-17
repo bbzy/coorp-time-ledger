@@ -1,0 +1,12 @@
+**/bin/
+**/obj/
+**/TestResults/
+artifacts/
+.AGENT_PLAYGROUND/
+.local/
+.DS_Store
+*.user
+*.suo
+*.trx
+coverage.cobertura.xml
+coverage.json
